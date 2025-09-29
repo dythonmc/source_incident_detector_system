@@ -1,0 +1,12 @@
+[
+    {
+        "timestamp_utc": "2025-09-29T20:20:21.167914+00:00",
+        "agent_evaluated": "DataMinerAgent",
+        "test_case": "207936_native.md",
+        "accuracy_score": "77.78%",
+        "completeness_score": "100.00%",
+        "mismatched_count": 2,
+        "missing_count": 0,
+        "prompt_version": "v1.0"
+    }
+]

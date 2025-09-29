@@ -1,0 +1,42 @@
+{
+  "resource_id": "207936",
+  "general_volume_stats": {
+    "mean_rows": 4144.19,
+    "median_rows": 105.0,
+    "stdev_rows": 16939.94,
+    "pct_empty_files": 31.9
+  },
+  "file_processing_daily_stats": [
+    { "day": "Mon", "mean_files": 3, "median_files": 3 },
+    { "day": "Tue", "mean_files": 3, "median_files": 3 },
+    { "day": "Wed", "mean_files": 4, "median_files": 3 },
+    { "day": "Thu", "mean_files": 3, "median_files": 3 },
+    { "day": "Fri", "mean_files": 3, "median_files": 3 },
+    { "day": "Sat", "mean_files": 2, "median_files": 3 },
+    { "day": "Sun", "mean_files": 4, "median_files": 3 }
+  ],
+  "upload_schedule_daily_stats": [
+    { "day": "Mon", "upload_window_expected_utc": "11:00:00–11:00:00 UTC" },
+    { "day": "Tue", "upload_window_expected_utc": "11:00:00–11:00:00 UTC" },
+    { "day": "Wed", "upload_window_expected_utc": "11:00:00–11:00:00 UTC" },
+    { "day": "Thu", "upload_window_expected_utc": "11:00:00–11:00:00 UTC" },
+    { "day": "Fri", "upload_window_expected_utc": "11:00:00–11:00:00 UTC" },
+    { "day": "Sat", "upload_window_expected_utc": "11:00:00–11:00:00 UTC" },
+    { "day": "Sun", "upload_window_expected_utc": "11:00:00–11:00:00 UTC" }
+  ],
+  "day_of_week_row_stats": [
+    { "day": "Mon", "rows_mean": 1306.90, "rows_median": 22.00, "empty_files_mean": 0.40 },
+    { "day": "Tue", "rows_mean": 4130.54, "rows_median": 141.00, "empty_files_mean": 0.32 },
+    { "day": "Wed", "rows_mean": 1632.80, "rows_median": 145.50, "empty_files_mean": 0.35 },
+    { "day": "Thu", "rows_mean": 1794.95, "rows_median": 125.00, "empty_files_mean": 0.30 },
+    { "day": "Fri", "rows_mean": 12343.26, "rows_median": 152.00, "empty_files_mean": 0.19 },
+    { "day": "Sat", "rows_mean": 1989.99, "rows_median": 87.00, "empty_files_mean": 0.38 },
+    { "day": "Sun", "rows_mean": 1685.58, "rows_median": 33.50, "empty_files_mean": 0.38 }
+  ],
+  "insights_for_incidences": [
+    "Empty files (31.9%) are predominantly associated with __POS channel.",
+    "Upload timing is extremely consistent in an 11:01-11:44 UTC window.",
+    "Weekend files are typically uploaded on Monday.",
+    "Absence of weekday uploads would be anomalous."
+  ]
+}
