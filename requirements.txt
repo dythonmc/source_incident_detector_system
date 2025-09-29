@@ -1,0 +1,12 @@
+# requirements.txt
+
+# Core data manipulation
+pandas
+openpyxl
+
+# Google AI Agent Framework and dependencies
+google-adk
+google-genai
+
+# Utilities
+python-dotenv

@@ -1,0 +1,84 @@
+[
+  {
+    "source_id": "196125",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histórica para los Mon es 2.00).",
+    "total_incidentes": 2,
+    "files_to_review": []
+  },
+  {
+    "source_id": "207938",
+    "incident_type": "Variación de Volumen Inesperada",
+    "incident_details": "Se encontraron 3 archivos con un número de filas anómalo. La media esperada para los Mon es ~436869 (stdev: 16949).",
+    "total_incidentes": 3,
+    "files_to_review": [
+      "3_Soop_CONC_20250907_M___POS_MARKETPLACE_5B25A3F571D6400082B1E5E228A3E401_14380200000121_0000.csv",
+      "3_Soop_CONC_20250907_M___PAGO_688B810A3E464D27B9E8AAE31C02CE91_02599377000134_0000.csv",
+      "3_Soop_CONC_20250907_M__SHOP_MARKETPLACE_046F9EC9F801495790B8182D16D66C6A_14380200000121_0000.csv"
+    ]
+  },
+  {
+    "source_id": "220504",
+    "incident_type": "Archivo Vacío Inesperado",
+    "incident_details": "Se recibieron 2 archivos vacíos, superando la media histórica de ~0.28 para los Mon.",
+    "total_incidentes": 2,
+    "files_to_review": [
+      "QkRq0GTSCYcEkvA__BR_Anotaai_Wallet_payments_accounting_report_2025_09_07.csv",
+      "QkRqxGJmiYcEnrQ__BR_safemode_payments_accounting_report_2025_09_07.csv"
+    ]
+  },
+  {
+    "source_id": "220504",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 4 archivos, pero se esperaban aproximadamente 16 (la media histórica para los Mon es 16.00).",
+    "total_incidentes": 12,
+    "files_to_review": [
+      "QkRq2GdOiYcED6w__BR_Saipos_payments_accounting_report_2025_09_07.csv",
+      "QkRq0GTSCYcEkvA__BR_Anotaai_Wallet_payments_accounting_report_2025_09_07.csv",
+      "QkRqxGJmiYcEnrQ__BR_safemode_payments_accounting_report_2025_09_07.csv",
+      "QkRqvEzQCYcEmgQ__BR_DataOnly_payments_accounting_report_2025_09_07.csv"
+    ]
+  },
+  {
+    "source_id": "220505",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histórica para los Mon es 2.00).",
+    "total_incidentes": 2,
+    "files_to_review": []
+  },
+  {
+    "source_id": "220506",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 1 (la media histórica para los Mon es 1.00).",
+    "total_incidentes": 1,
+    "files_to_review": []
+  },
+  {
+    "source_id": "228036",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histórica para los Mon es 2.00).",
+    "total_incidentes": 2,
+    "files_to_review": []
+  },
+  {
+    "source_id": "228038",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histórica para los Mon es 2.00).",
+    "total_incidentes": 2,
+    "files_to_review": []
+  },
+  {
+    "source_id": "239611",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histórica para los Mon es 2.00).",
+    "total_incidentes": 2,
+    "files_to_review": []
+  },
+  {
+    "source_id": "239613",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histórica para los Mon es 2.00).",
+    "total_incidentes": 2,
+    "files_to_review": []
+  }
+]
