@@ -1,30 +1,27 @@
 import os
-import sys
+
 import json
 import asyncio
 import re
 from datetime import datetime, timezone
+import pandas as pd
 
-# Añadimos la ruta raíz del proyecto al sys.path
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(project_root)
 
-# Importaciones de ADK y de nuestro agente
+
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
 from src.agents.data_miner.agent import data_miner_agent
 
-# --- CONFIGURACIÓN DE LA EVALUACIÓN ---
+# --- RUTAS ACTUALIZADAS ---
 CV_TO_TEST = "207936_native.md"
 CV_FOLDER_PATH = "data/datasource_cvs"
-GROUND_TRUTH_PATH = f"evaluation/data_miner/ground_truth_cv_{CV_TO_TEST.split('_')[0]}.json"
-# --- CAMBIO AQUÍ: La extensión del log ahora es .json ---
-EVALUATION_LOG_PATH = "evaluation/data_miner/evaluation_log.json"
+GROUND_TRUTH_PATH = f"evaluation/data_miner/ground_truth/ground_truth_cv_{CV_TO_TEST.split('_')[0]}.json"
+EVALUATION_LOG_PATH = "evaluation/data_miner/evaluation_results/evaluation_log.json"
 
-# Constantes para la sesión de ADK
 APP_NAME = "evaluator_app"
 USER_ID = "eval_user"
+
 
 def compare_jsons(truth: dict, prediction: dict) -> dict:
     """Compara dos diccionarios (JSONs) y calcula métricas de precisión y completitud."""

@@ -1,0 +1,15 @@
+{
+  "test_case_id": "rec_eval_01_missing_files",
+  "incident_data": {
+    "source_id": "220504",
+    "incident_type": "Archivos Faltantes",
+    "incident_details": "Se recibieron 3 archivos, pero se esperaban aproximadamente 4 (la media histórica para los Mon es 3.86).",
+    "total_incidentes": 1,
+    "files_to_review": [
+      "QkRq0GTSCYcEkvA__BR_Anotaai_Wallet_payments_accounting_report_2025_09_07.csv",
+      "QkRqxGJmiYcEnrQ__BR_safemode_payments_accounting_report_2025_09_07.csv",
+      "QkRqw2JsiYcEuIA__BR_Anotaai_payments_accounting_report_2025_09_07.csv"
+    ]
+  },
+  "golden_recommendation": "Contactar al proveedor de la fuente 220504 para investigar por qué falta 1 archivo esperado para el lunes, que es un día de alto volumen. Verificar si hay retrasos conocidos en la entrega."
+}

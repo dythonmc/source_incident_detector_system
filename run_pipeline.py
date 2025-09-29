@@ -6,9 +6,9 @@ from datetime import datetime, timedelta
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 # Importamos las funciones 'main' de nuestros scripts, renombrándolas para claridad
-from scripts.run_data_mining import main as run_data_mining
-from scripts.run_incident_detection import main as run_incident_detection
-from scripts.run_final_report import main as run_final_report
+from scripts.pipeline.run_data_mining import main as run_data_mining
+from scripts.pipeline.run_incident_detection import main as run_incident_detection
+from scripts.pipeline.run_final_report import main as run_final_report
 
 def run_full_pipeline():
     """

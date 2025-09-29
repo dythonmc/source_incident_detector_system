@@ -1,0 +1,12 @@
+[
+    {
+        "timestamp_utc": "2025-09-29T21:15:38.228503+00:00",
+        "agent_evaluated": "RecommenderAgent",
+        "test_case_id": "rec_eval_01_missing_files",
+        "prompt_version": "v1.0",
+        "score": 0.0,
+        "justification": "Respuesta no válida del Juez: ```json\n{\n  \"score\": 2.7,\n  \"justification\": \"La recomendación del agente contiene un error fáctico grave al afirmar que se esperaban '~16' archivos, cuando la incidencia especifica claramente que la media es ~4. Este dato incorrecto exagera la severidad del problema, calificándolo de 'desviación crítica'. Aunque la acción sugerida ('Contactar al proveedor') es correcta y coincide con la ideal, la justificación errónea compromete severamente su relevancia y fiabilidad.\"\n}\n```",
+        "golden_recommendation": "Contactar al proveedor de la fuente 220504 para investigar por quÃ© falta 1 archivo esperado para el lunes, que es un dÃ­a de alto volumen. Verificar si hay retrasos conocidos en la entrega.",
+        "agent_recommendation": "Contactar urgentemente al proveedor. Se recibieron solo 3 archivos en lugar de los ~16 esperados para un lunes, lo que representa una desviación crítica."
+    }
+]
