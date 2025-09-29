@@ -23,7 +23,7 @@ OPERATION_DATE = "2025-09-08"
 OUTPUT_DIR = "outputs"
 CV_DATA_PATH = os.path.join(OUTPUT_DIR, "cv_data.json")
 
-def main():
+def main(operation_date_str: str):
     """
     Script principal para orquestar la detección de incidencias, iterando por cada
     fuente conocida a partir de los CVs.
@@ -96,3 +96,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    from datetime import datetime
+    today_str = datetime.now().strftime('%Y-%m-%d')
+    main(operation_date_str=today_str)
