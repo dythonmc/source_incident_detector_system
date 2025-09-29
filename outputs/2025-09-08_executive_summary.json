@@ -10,7 +10,7 @@
         "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histÃ³rica para los Mon es 2.00).",
         "total_incidentes": 2,
         "files_to_review": [],
-        "recommendation": "Cerrar esta alerta. La mediana de archivos para los lunes es 0, lo que indica que no recibir archivos en este día es un comportamiento normal para la fuente."
+        "recommendation": "La mediana de archivos para los lunes es 0, por lo que no recibir archivos es un comportamiento esperado para esta fuente. Se recomienda cerrar la incidencia."
       }
     ]
   },
@@ -29,7 +29,7 @@
           "3_Soop_CONC_20250907_M___PAGO_688B810A3E464D27B9E8AAE31C02CE91_02599377000134_0000.csv",
           "3_Soop_CONC_20250907_M__SHOP_MARKETPLACE_046F9EC9F801495790B8182D16D66C6A_14380200000121_0000.csv"
         ],
-        "recommendation": "Verificar con el proveedor por qué se recibieron 3 archivos el domingo, un día en el que no se esperan envíos."
+        "recommendation": "Investigar por qué se recibieron 3 archivos el domingo, un día en el que no se esperan envíos por parte del proveedor."
       }
     ]
   },
@@ -47,7 +47,7 @@
           "QkRq0GTSCYcEkvA__BR_Anotaai_Wallet_payments_accounting_report_2025_09_07.csv",
           "QkRqxGJmiYcEnrQ__BR_safemode_payments_accounting_report_2025_09_07.csv"
         ],
-        "recommendation": "Ignorar el archivo de 'safemode' por ser un falso positivo (históricamente siempre está vacío) y confirmar si la ausencia de datos en 'Anotaai_Wallet' es esperada."
+        "recommendation": "Ignorar el archivo 'safemode' por ser un falso positivo conocido y enfocar la investigación en por qué el archivo 'Anotaai_Wallet' llegó vacío."
       },
       {
         "source_id": "220504",
@@ -60,7 +60,7 @@
           "QkRqxGJmiYcEnrQ__BR_safemode_payments_accounting_report_2025_09_07.csv",
           "QkRqvEzQCYcEmgQ__BR_DataOnly_payments_accounting_report_2025_09_07.csv"
         ],
-        "recommendation": "Verificar con el proveedor por qué faltan 12 de los 16 archivos esperados para el lunes, el día de mayor volumen de datos de la semana."
+        "recommendation": "Verificar con el proveedor por qué faltan 12 de los 16 archivos del lunes, un día que históricamente tiene el mayor volumen de datos."
       }
     ]
   },
@@ -75,7 +75,7 @@
         "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histÃ³rica para los Mon es 2.00).",
         "total_incidentes": 2,
         "files_to_review": [],
-        "recommendation": "Verificar con el proveedor por qué no se recibieron los 2 archivos esperados para el lunes, un día de alto volumen de procesamiento."
+        "recommendation": "Verificar con el proveedor la ausencia de los 2 archivos esperados del lunes, un día de alto volumen de transacciones."
       }
     ]
   },
@@ -90,7 +90,7 @@
         "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 1 (la media histÃ³rica para los Mon es 1.00).",
         "total_incidentes": 1,
         "files_to_review": [],
-        "recommendation": "Investigar con el proveedor la ausencia del archivo del lunes, ya que esta fuente entrega consistentemente un archivo cada día."
+        "recommendation": "Verificar con el proveedor la ausencia del archivo del lunes, ya que esta fuente tiene un patrón histórico de enviar un archivo todos los días sin excepción."
       }
     ]
   },
@@ -105,7 +105,7 @@
         "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histÃ³rica para los Mon es 2.00).",
         "total_incidentes": 2,
         "files_to_review": [],
-        "recommendation": "Verificar con el proveedor por qué no se recibieron los 2 archivos esperados del lunes, un día de alto volumen."
+        "recommendation": "Contactar al proveedor para solicitar los 2 archivos faltantes del lunes, nuestro día de mayor volumen de procesamiento."
       }
     ]
   },
@@ -120,7 +120,7 @@
         "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histÃ³rica para los Mon es 2.00).",
         "total_incidentes": 2,
         "files_to_review": [],
-        "recommendation": "Verificar con el proveedor por qué no se recibieron los 2 archivos esperados del lunes, un día de alto volumen."
+        "recommendation": "Verificar con el proveedor por qué no se recibieron los 2 archivos esperados para el lunes, el día de mayor volumen promedio."
       }
     ]
   },
@@ -135,7 +135,7 @@
         "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histÃ³rica para los Mon es 2.00).",
         "total_incidentes": 2,
         "files_to_review": [],
-        "recommendation": "Verificar con el proveedor por qué no se recibieron los 2 archivos esperados del lunes, un día que históricamente tiene el mayor volumen de la semana."
+        "recommendation": "Verificar con el proveedor la ausencia de los 2 archivos del lunes, un día que históricamente representa el mayor volumen de la semana."
       }
     ]
   },
@@ -150,7 +150,7 @@
         "incident_details": "Se recibieron 0 archivos, pero se esperaban aproximadamente 2 (la media histÃ³rica para los Mon es 2.00).",
         "total_incidentes": 2,
         "files_to_review": [],
-        "recommendation": "Verificar con el proveedor por qué no se recibieron los 2 archivos esperados para el lunes, un día de alto volumen."
+        "recommendation": "Verificar con el proveedor por qué no se recibieron los 2 archivos esperados para el lunes, históricamente el día de mayor volumen de la semana."
       }
     ]
   }
