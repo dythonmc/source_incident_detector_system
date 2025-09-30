@@ -8,9 +8,9 @@ El diseño se basa en un enfoque híbrido: se utiliza lógica determinística pa
 
 <br>
 
+**Diagrama Diseño**
 ![Diagrama de Arquitectura del Sistema de Detección de Incidencias](docs/architecture.svg)
 
-<br>
 
 ## **2. Arquitectura Multi-Agente**
 El sistema no es una aplicación monolítica, sino un ecosistema de agentes que se orquestan para realizar tareas complejas. Cada agente tiene una única responsabilidad, lo que hace que el sistema sea modular, escalable y fácil de mantener.
@@ -71,7 +71,40 @@ Una parte fundamental del diseño es la capacidad del sistema para auto-evaluars
 
 <br>
 
-## **3. Estructura del Proyecto**
+## **3. Paso a Paso del Flujo del Sistema**
+***FASE DE PIPELINE (Ejecución de Producción)***
+
+**Paso 1: Preparación y Extracción de Conocimiento**
+
+- **1.1: Recolección de Datos Crudos:** Se toman los ``files.json``, la carpeta ``datasource_cvs/`` y el archivo ``Feedback.xlsx.``
+
+- **1.2: Carga con data_loader:** El módulo ``src/preparation/data_loader.py`` carga los datos de operación (``files.json``) en un DataFrame.
+
+- **1.3: ``DataMinerAgent`` extrae la Inteligencia:** El ``DataMinerAgent`` lee los archivos ``.md`` no estructurados y los transforma en el archivo ``outputs/cv_data.json``, que es la base de conocimiento del sistema.
+
+**Paso 2: Detección Determinística de Incidencias**
+
+- **2.1: El Motor Lógico se Activa:** El script ``run_incident_detection.py`` itera sobre cada fuente conocida.
+
+- **2.2: Cruce de Datos vs. Inteligencia:** El módulo ``src/detection/detectors.py`` aplica 6 reglas de negocio precisas, comparando los datos del día con los patrones del ``cv_data.json.``
+
+- **2.3: Salida Técnica:** Se genera el reporte ``outputs/{fecha}_incidents_report.json`` con una lista estructurada de todos los problemas encontrados.
+
+**Paso 3: Enriquecimiento y Reporte Ejecutivo con IA**
+
+- **3.1: Clasificación de Severidad:** El módulo ``src/reporting/consolidator.py`` lee el reporte de incidencias y asigna un nivel de criticidad (🔴 URGENTE, 🟡 REQUIERE ATENCIÓN, TODO BIEN 🟢) a cada fuente.
+
+- **3.2: ``RecommenderAgent`` Genera Insights:** El ``RecommenderAgent`` analiza cada incidencia y, basándose en el contexto del CV, genera una recomendación accionable en lenguaje natural.
+
+- **3.3: Salida Ejecutiva:** Se generan los reportes finales en ``outputs/``: un ``.md`` para humanos y un .``json`` para otros sistemas.
+
+**Paso 4: Notificación (Bonus)**
+
+- **4.1: Envío de Alerta:** El módulo ``src/notifications/email_sender.py`` toma el reporte .md, lo convierte a HTML y lo envía por email a los stakeholders.
+
+<br>
+
+## **4. Estructura del Proyecto**
 El proyecto sigue una estructura profesional que separa claramente los intereses (Separation of Concerns):
 
 ```
@@ -90,7 +123,7 @@ El proyecto sigue una estructura profesional que separa claramente los intereses
 
 <br>
 
-## **4. Guía de Instalación**
+## **5. Guía de Instalación**
 Sigue estos pasos para configurar el entorno de desarrollo.
 
 1. **Clonar el Repositorio:**
@@ -128,7 +161,7 @@ EMAIL_RECIPIENT="correo_destino@ejemplo.com"
 
 <br>
 
-## 5. **Guía de Uso del Sistema**
+## 6. **Guía de Uso del Sistema**
 Ejecutar el Pipeline Completo
 Para ejecutar todo el proceso de forma automática para un día específico, configura la fecha en el script principal y ejecútalo desde la raíz del proyecto.
 
@@ -185,9 +218,10 @@ python -m scripts.evaluation.run_recommender_evaluation
 python -m scripts.evaluation.run_feedback_evaluation
 ```
 
-## 6. Componentes Clave y Diseño
+## **7. Componentes Clave y Diseño**
 - **Diseño Híbrido:** El sistema combina lógica determinística para tareas que requieren 100% de precisión (detección de incidencias) con Agentes de IA para tareas que involucran lenguaje no estructurado y razonamiento (minería de CVs, recomendaciones).
 
 - **Framework de Agentes ``google-adk``:** Se utiliza para definir agentes especializados y modulares, cada uno con un propósito claro y, en su caso, herramientas específicas.
 
 - **Framework de Evaluación Continua:** El proyecto incluye un robusto sistema de evaluación que permite medir la calidad de cada componente de IA de forma cuantitativa y cualitativa, sentando las bases para la mejora continua y MLOps.
+
