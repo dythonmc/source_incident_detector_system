@@ -8,7 +8,7 @@ El diseño se basa en un enfoque híbrido: se utiliza lógica determinística pa
 
 <br>
 
-![Diagrama de Arquitectura del Sistema de Detección de Incidencias](docs/incident_detector_system.drawio.svg.svg)
+![Diagrama de Arquitectura del Sistema de Detección de Incidencias](docs/architecture.svg)
 
 <br>
 
