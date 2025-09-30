@@ -8,7 +8,7 @@ load_dotenv()
 
 
 recommender_judge_agent = Agent(
-    name="recommender_judge_agent",
+    name="recommender_evaluator_agent",
     model="gemini-2.5-pro",
     description="Un agente especializado en evaluar cualitativamente la respuesta del RecommenderAgent.",
     instruction=SYSTEM_PROMPT
