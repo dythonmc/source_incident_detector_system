@@ -48,14 +48,14 @@ def main(operation_date_str: str):
             args = [df_source_files]
             if "source_cv_info" in detector_func.__code__.co_varnames: args.append(source_cv_info)
             if "operation_date_str" in detector_func.__code__.co_varnames: args.append(operation_date_str)
-            incidents = detector_func(*args, verbose=False) # verbose=False para un log más limpio en el pipeline
+            incidents = detector_func(*args, verbose=False)
             if incidents:
                 all_incidents.extend(incidents)
 
     print("[3/3] Consolidando y guardando reporte de incidencias...")
     if not all_incidents:
         print("¡Excelente! No se encontraron incidencias.")
-        # Creamos un archivo vacío para que el siguiente paso no falle
+
         output_path = os.path.join(OUTPUT_DIR, f"{operation_date_str}_incidents_report.json")
         with open(output_path, 'w') as f: json.dump([], f)
         return

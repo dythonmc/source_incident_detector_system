@@ -13,7 +13,7 @@ from google.adk.sessions import InMemorySessionService
 from google.genai import types
 from src.agents.data_miner.agent import data_miner_agent
 
-# --- RUTAS ACTUALIZADAS ---
+
 CV_TO_TEST = "207936_native.md"
 CV_FOLDER_PATH = "data/datasource_cvs"
 GROUND_TRUTH_PATH = f"evaluation/data_miner/ground_truth/ground_truth_cv_{CV_TO_TEST.split('_')[0]}.json"
@@ -25,7 +25,7 @@ USER_ID = "eval_user"
 
 def compare_jsons(truth: dict, prediction: dict) -> dict:
     """Compara dos diccionarios (JSONs) y calcula métricas de precisión y completitud."""
-    # (Esta función no necesita cambios)
+    
     total_fields, correct_fields, missing_fields, mismatched_fields = 0, 0, [], []
     for key, truth_value in truth.items():
         if isinstance(truth_value, dict):
@@ -63,8 +63,7 @@ def compare_jsons(truth: dict, prediction: dict) -> dict:
 
 async def main():
     """Script principal para la evaluación unitaria del DataMinerAgent."""
-    # (Las primeras 3 fases del main se mantienen igual)
-    # ...
+
     print(f"--- Iniciando Evaluación para el Agente: DataMinerAgent ---")
     print(f"--- Archivo de Prueba: {CV_TO_TEST} ---")
 

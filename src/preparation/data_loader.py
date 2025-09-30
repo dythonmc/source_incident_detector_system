@@ -3,7 +3,7 @@
 import pandas as pd
 from datetime import datetime
 import os
-import json # Necesitamos la librería json para manejar esta estructura
+import json
 
 def load_and_filter_daily_files(execution_date_str: str, base_data_path: str = 'data') -> pd.DataFrame:
     """

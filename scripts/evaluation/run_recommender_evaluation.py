@@ -4,7 +4,7 @@ import json
 import asyncio
 from datetime import datetime, timezone
 
-# Ajuste para la nueva estructura de carpetas (sube dos niveles)
+
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.append(project_root)
 
@@ -13,7 +13,6 @@ from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
 from src.agents.recommender.agent import recommender_agent
-# Importamos el agente con su nombre final y desde su nueva ruta
 from src.agents.recommender_evaluator_agent.agent import recommender_evaluator_agent
 
 # --- CONFIGURACIÓN ---

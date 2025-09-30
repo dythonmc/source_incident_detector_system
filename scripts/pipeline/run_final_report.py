@@ -135,6 +135,5 @@ async def main(operation_date_str: str):
     generate_markdown_report(classified_sources, operation_date_str, FINAL_REPORT_MD_PATH)
 
 if __name__ == '__main__':
-    # Esto solo se ejecuta si corres este script directamente para probarlo
-    # En el pipeline final, la fecha vendrá desde run_pipeline.py
+
     asyncio.run(main(operation_date_str="2025-09-08"))

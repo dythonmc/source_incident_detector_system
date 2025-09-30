@@ -17,7 +17,7 @@ def parse_feedback_excel_file(feedback_file_path: str) -> Dict:
         En error, 'status' es 'error' y contiene 'error_message'.
     """
     try:
-        # --- CAMBIO CLAVE: Usamos read_excel para el archivo .xlsx ---
+
         df_feedback = pd.read_excel(feedback_file_path, engine='openpyxl')
     except FileNotFoundError:
         return {"status": "error", "error_message": f"Archivo no encontrado en: {feedback_file_path}"}
