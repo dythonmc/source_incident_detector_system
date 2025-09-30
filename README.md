@@ -8,6 +8,10 @@ El diseño se basa en un enfoque híbrido: se utiliza lógica determinística pa
 
 <br>
 
+![Diagrama de Arquitectura del Sistema de Detección de Incidencias](docs/incident_detector_system.drawio.svg.svg)
+
+<br>
+
 ## **2. Arquitectura Multi-Agente**
 El sistema no es una aplicación monolítica, sino un ecosistema de agentes que se orquestan para realizar tareas complejas. Cada agente tiene una única responsabilidad, lo que hace que el sistema sea modular, escalable y fácil de mantener.
 
