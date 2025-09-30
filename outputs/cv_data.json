@@ -113,18 +113,20 @@
       },
       {
         "day": "Sun",
-        "rows_mean": null,
-        "rows_median": null,
-        "empty_files_mean": null
+        "rows_mean": 0.0,
+        "rows_median": 0.0,
+        "empty_files_mean": 0.0
       }
     ],
     "insights_for_incidences": [
-      "Files appearing on Sunday would be anomalous.",
-      "Files with formats other than CSV are anomalous.",
-      "Failed, duplicated, or empty files are not expected.",
-      "Expect consistent batch uploads Tuesday-Saturday during 08:00-08:13 UTC.",
-      "Complete absence of uploads on Sunday, minimal activity on Monday.",
-      "Significant deviations from entity-specific volume patterns would be anomalous."
+      "Beneficios entity shows an unusual Friday spike pattern (14.60 files vs. typical 1-2 files).",
+      "Files appearing on Sunday would be anomalous (consistently zero in historical data).",
+      "Files with formats other than CSV would be anomalous (100% CSV historically).",
+      "Monday shows minimal activity (mean 1 file overall) with a wider time window (08:06-17:21 UTC).",
+      "Most uploads are expected Tuesday-Saturday within 08:00-08:13 UTC.",
+      "Saipos entity shows Monday activity (5.50 files) which differs from most entities.",
+      "Significant deviations from entity-specific volume patterns would be anomalous.",
+      "Wednesday consistently shows the highest volume."
     ],
     "source_id": "195385"
   },
@@ -248,12 +250,13 @@
       }
     ],
     "insights_for_incidences": [
-      "Non-empty files are consistently capped at exactly 150,000 rows.",
-      "Normal processing pattern: Daily uploads with 7-day coverage.",
-      "Wednesday shows the peak volume.",
-      "High empty file rate (>80%) on Mondays and Tuesdays is normal.",
+      "Absence of daily uploads with 7-day coverage would be anomalous.",
       "Absence of weekend processing would be anomalous.",
-      "Row distribution is highly consistent for non-empty files (median 150,000 rows Wed-Sun)."
+      "Uploads outside the 07:30-15:30 UTC window across any day would be anomalous.",
+      "Lag (filename date → upload timestamp) outside +1 to +3 days would be anomalous.",
+      "Non-empty files not consistently showing a maximum of 150,000 rows would be anomalous.",
+      "Deviation from Wednesday's peak volume (38.4M rows) or largest file sets would be anomalous.",
+      "Monday/Tuesday not having a high empty file rate (>80%) or significantly lower volume than other days would be anomalous."
     ],
     "source_id": "195436"
   },
@@ -377,11 +380,12 @@
       }
     ],
     "insights_for_incidences": [
-      "Consistent daily uploads with no gaps >1 day throughout analyzed period.",
-      "No empty files: 100% of files contain data (minimum 517 rows).",
-      "Files are consistently uploaded on D+3 from reference date.",
-      "Clear regime change on 2025-05-29: Before: ~440k rows/file, uploaded ~22:30 UTC. After: ~1,200 rows/file, uploaded ~02:35 UTC",
-      "Weekend processing is active and substantial, matching weekday patterns."
+      "Deviation from one file per day pattern (mode=1 across all days, with an occasional outlier on Wednesday).",
+      "Deviation from consistent 3-day lag between filename date and upload date.",
+      "Presence of empty files or files with less than 517 rows.",
+      "Gaps of more than one day in daily uploads.",
+      "Significant change in file row count compared to historical averages for the relevant period (before/after 2025-05-29).",
+      "Absence of active and substantial weekend processing."
     ],
     "source_id": "195439"
   },
@@ -505,12 +509,21 @@
       }
     ],
     "insights_for_incidences": [
-      "Clear Tuesday-Saturday active cycle; Monday/Sunday show minimal activity.",
-      "Extremely tight upload window (08:04-08:12 UTC) across all active days.",
+      "File count consistency: Tuesday-Saturday show remarkably consistent file counts (mean 43.15 files/day).",
+      "Upload timing: Extremely tight upload window (08:04-08:12 UTC) across all active days.",
+      "Empty files: 12 files (1.2% of total), primarily on Monday/Sunday.",
+      "Failure files: 10 files (1.0%), all associated with \"Saipos\" entity.",
+      "Multi-part structure: 72% of files follow batch numbering pattern; remainder use date-range format.",
       "Low-volume days: Monday and Sunday consistently show minimal activity (exactly 6 files each).",
-      "Processing failures are almost exclusively associated with the 'Saipos' entity.",
-      "Highly skewed file size distribution (mean: 40,694 vs median: 3,868 rows) is normal.",
-      "Tuesday shows exceptional peak volume."
+      "File size distribution: 21.7% of files contain <100 rows; median 3,868.5 rows across all files.",
+      "Coverage: 2025-07-31 to 2025-08-30, 1,000 files with 97.8% successful processing rate.",
+      "Timing precision: Remarkable upload time consistency (08:04-08:12 UTC) with extremely low standard deviation.",
+      "Day pattern: Clear Tuesday-Saturday active cycle; Monday/Sunday show minimal activity (exactly 6 files each).",
+      "Volume distribution: Tuesday shows exceptional peak volume (20.0M rows); Saturday second highest (7.1M rows).",
+      "File size characteristics: Highly skewed distribution (mean: 40,694 vs median: 3,868 rows).",
+      "Processing reliability: Low failure rate (1.0%) exclusively associated with \"Saipos\" entity.",
+      "Entity distribution: BR appears in 100% of files; sub-entities follow consistent patterns (Settlement 27%, PwGoogle 14%, ApplePay 13%).",
+      "Extreme outliers: Max file size (2.57M rows) observed on Tuesday; 95% of files contain <310k rows."
     ],
     "source_id": "196125"
   },
@@ -634,11 +647,17 @@
       }
     ],
     "insights_for_incidences": [
-      "Consistent daily uploads across all days of week; mode=2 files per day (PIX+BANKING).",
-      "95% of uploads occur within tight 11:01-11:33 UTC window across all days.",
-      "Absence of weekend processing would be anomalous.",
-      "Jan-Mar 2025 shows anomalous pattern with empty/near-empty files; considered outlier phase.",
-      "Multi-part uploads occur for files containing >500k rows each."
+      "A significant deviation from 5.4% empty files could be anomalous.",
+      "Deviations from 2-3 parts or >500k rows for multi-part files could be anomalous.",
+      "A lag between filename date and upload date other than 1-2 days (median=1 day) is anomalous.",
+      "Uploads occurring outside the 11:01-11:33 UTC window would be anomalous.",
+      "Significant change in PIX (~77%) and BANKING (~23%) channel distribution is anomalous.",
+      "An increase in processing issues (currently 0.6% stopped, 0.2% deleted) or concentration on specific days might be anomalous.",
+      "Absence of consistent daily uploads or deviation from 2 files per day is anomalous.",
+      "Significantly lower volume on Wednesday (17.3M rows) and Friday (17.2M rows) might be anomalous.",
+      "Files outside the normal range of 0-506,743 rows (95% interval) or significant deviation from the median 83,190 rows per file could be anomalous.",
+      "Similar patterns to the Jan-Mar 2025 data-gap period with empty/near-empty files in other periods would be anomalous.",
+      "Absence of strong weekend processing (Sat: 12.1M rows, Sun: 9.5M rows) would be anomalous."
     ],
     "source_id": "199944"
   },
@@ -690,31 +709,31 @@
     "upload_schedule_daily_stats": [
       {
         "day": "Mon",
-        "upload_window_expected_utc": "11:01-11:44 UTC"
+        "upload_window_expected_utc": "11:00:00–11:00:00 UTC"
       },
       {
         "day": "Tue",
-        "upload_window_expected_utc": "11:01-11:44 UTC"
+        "upload_window_expected_utc": "11:00:00–11:00:00 UTC"
       },
       {
         "day": "Wed",
-        "upload_window_expected_utc": "11:01-11:44 UTC"
+        "upload_window_expected_utc": "11:00:00–11:00:00 UTC"
       },
       {
         "day": "Thu",
-        "upload_window_expected_utc": "11:01-11:44 UTC"
+        "upload_window_expected_utc": "11:00:00–11:00:00 UTC"
       },
       {
         "day": "Fri",
-        "upload_window_expected_utc": "11:01-11:44 UTC"
+        "upload_window_expected_utc": "11:00:00–11:00:00 UTC"
       },
       {
         "day": "Sat",
-        "upload_window_expected_utc": "11:01-11:44 UTC"
+        "upload_window_expected_utc": "11:00:00–11:00:00 UTC"
       },
       {
         "day": "Sun",
-        "upload_window_expected_utc": "11:01-11:44 UTC"
+        "upload_window_expected_utc": "11:00:00–11:00:00 UTC"
       }
     ],
     "day_of_week_row_stats": [
@@ -762,12 +781,13 @@
       }
     ],
     "insights_for_incidences": [
+      "Empty files: 319 files (31.9% of total); predominantly associated with __POS channel.",
+      "Upload timing: Extremely consistent 11:01-11:44 UTC window (median 11:06 UTC) across all days.",
+      "Weekends always have SHOP & PAGO small files; POS files are structurally empty (rows = 0).",
+      "No uploads outside schedule window except rare backfills.",
       "Absence of weekday uploads would be anomalous.",
-      "Uploads are extremely consistent, expected within the 11:01-11:44 UTC window across all days.",
-      "A high percentage of empty files (approx. 31.9%) is normal, especially from the __POS channel.",
-      "Weekend POS files are expected to be structurally empty (rows = 0).",
-      "File volume is highly skewed (mean: 4,144 vs median: 105), so low row counts are common and not necessarily an anomaly.",
-      "Fridays can have exceptionally high peak volumes compared to other days."
+      "Empty file pattern: 31.9% of files contain 0 rows; predominantly __POS channel files.",
+      "Day-of-week pattern: Friday shows exceptional peak volume (2.5M rows); Tuesday second highest (520K rows)."
     ],
     "source_id": "207936"
   },
@@ -891,13 +911,16 @@
       }
     ],
     "insights_for_incidences": [
-      "A large portion of files (31.9%) are empty, mostly associated with the POS_MARKETPLACE channel.",
-      "Sunday shows no processing activity or uploads according to the core reference summary.",
-      "File volume is highly skewed (mean 4,156 vs median 119 rows), with many files having fewer than 100 rows.",
-      "Thursday is the peak volume day for total rows.",
-      "Uploads are very consistent, typically arriving between 10:45-12:30 UTC.",
-      "Gaps in uploads longer than 24 hours are rare and anomalous.",
-      "POS channel files tend to be either empty or very large."
+      "Empty files typically constitute 31.9% of total files and are mainly associated with the POS_MARKETPLACE channel (98%).",
+      "Empty file distribution varies by day of the week (Mon: 18%, Tue: 15%, Wed: 8%, Thu: 21%, Fri: 9%, Sat: 31%).",
+      "Multi-part uploads usually have 3 parts (0000-0002).",
+      "Standard upload window is 10:45-12:30 UTC; evening uploads (20:50-21:40 UTC) are rare (<1% of files).",
+      "Normal lag between filename date and upload date is 1-2 days; extended lags up to 95 days occur for historical data.",
+      "Unexpected bulk upload events might indicate an anomaly.",
+      "A consistent pattern of 3 files per day is expected, with no activity on Sundays.",
+      "Thursday typically shows peak volume, with Monday being the second highest.",
+      "POS files exhibit a binary pattern: either empty or very large.",
+      "Gaps in uploads exceeding 24 hours are rare and usually occur during holidays."
     ],
     "source_id": "207938"
   },
@@ -1021,12 +1044,20 @@
       }
     ],
     "insights_for_incidences": [
-      "File pattern: One CSV per calendar date; filename always matches statement date.",
-      "Upload timing is consistently in a 15:10-15:25 UTC window.",
-      "Normal file row count is between 26,350 and 261,195 rows.",
-      "All days show active processing; absence of uploads on any day would be anomalous.",
-      "The normal lag between statement date and upload date is 1 day.",
-      "No multi-part uploads are expected; each statement date corresponds to exactly one file."
+      "Empty files: 8 files (2.39% of total); concentrated in two periods (2025-05-24/25 and 2025-07-21 to 07-31).",
+      "Empty file distribution: Slightly higher concentration on weekends (54%) compared to weekdays (46%).",
+      "Multi-part uploads: None observed; each statement date corresponds to exactly one file.",
+      "Upload timing consistency: Standard pattern: 15:10-15:25 UTC window (mean 15:17 UTC, standard deviation ±5 minutes).",
+      "Lag pattern (statement-date → upload-date): Normal flow: 1 day (median, mean = 1.1 days, standard deviation 0.3 days).",
+      "File size anomalies: Cluster of micro-files (≤300 rows) between 2025-07-15 and 2025-07-31 (14 files total).",
+      "Bulk upload events: One major episode on 2024-12-19 (32 files, historical load of Oct/Nov data).",
+      "File pattern: One CSV per calendar date (mode=1 across all days); filename always matches statement date.",
+      "Upload timing: Remarkably consistent 15:10-15:25 UTC window (mean 15:17 UTC, standard deviation ±5 minutes).",
+      "Volume distribution: Thursday shows highest total (10.8M rows), followed by Monday (10.1M rows).",
+      "File size characteristics: Normal range 26,350-261,195 rows (95% interval); median 146,080 rows.",
+      "Day-of-week consistency: All days show active processing; weekend volumes comparable to weekdays.",
+      "Data volume fluctuations: Short-lived high-volume period in March 2025 and low-volume period in mid-July 2025.",
+      "Processing anomalies: Two distinct patterns observed (empty files 2.39%; micro-files ≤300 rows in July 2025)."
     ],
     "source_id": "209773"
   },
@@ -1150,12 +1181,10 @@
       }
     ],
     "insights_for_incidences": [
-      "Daily uploads are the norm; only 5 isolated dates without uploads in entire period.",
       "Uploads outside 14:00-18:00 UTC would be unusual.",
-      "Normal file size range is 557-11,657 rows (95% interval).",
-      "Clear downward trend in file sizes after March 2025.",
-      "Small files (<=100 rows) account for 6% of history and appear in bursts.",
-      "Quarterly backfill events with multiple historical-date files are considered normal."
+      "Absence of daily uploads would be anomalous.",
+      "Appearance of small \"micro\" files (<=100 rows) in short bursts.",
+      "Clear downward trend in file sizes after March 2025 (median ~8k → ~4.5k rows)."
     ],
     "source_id": "211544"
   },
@@ -1279,12 +1308,13 @@
       }
     ],
     "insights_for_incidences": [
-      "Any new entity, date lag >2 days, upload time outside 08:08-08:18 UTC, or multi-part files would deviate from historical pattern.",
-      "Highly regular daily pattern (16-19 files per day) with minimal variation.",
-      "Lag between filename date and upload date is consistently T+1.",
-      "Perfect daily continuity with no gaps is expected.",
-      "Entities 'Innovation', 'POC', and 'safemode' are consistently empty, which is normal.",
-      "A high percentage of empty files (around 24.8%) is normal for this source."
+      "Highly regular daily file count pattern (16-19 files per day).",
+      "29 recurring entities with consistent presence and predictable file counts.",
+      "Expected empty files (24.8% of total) are concentrated in specific entities (Innovation, POC, safemode: 100% empty; Beneficios: ~50% empty; WhiteLabel: ~25% empty).",
+      "Upload timing is extremely consistent (08:08-08:18 UTC).",
+      "Consistent T+1 lag between filename date and upload date (median 1 day).",
+      "All days show active processing with comparable file counts and empty file rates.",
+      "Any new entity, date lag >2 days, upload time outside 08:08-08:18 UTC, or multi-part files would be anomalous."
     ],
     "source_id": "220504"
   },
@@ -1409,10 +1439,11 @@
     ],
     "insights_for_incidences": [
       "Absence of files on any day would be anomalous.",
-      "Consistent two files per day pattern (Debito & MVP).",
-      "Normal file row count is between 28,055 and 474,404.",
-      "'Filtered' zero-row uploads occur regularly and are considered normal background noise.",
-      "There are two distinct upload windows in the baseline: around 14:06 UTC and 08:06 UTC."
+      "Upload pattern of two files per day (Debito & MVP) should be consistent; deviation would be anomalous.",
+      "Uploads should occur within the established time windows (14:04-14:13 UTC for older data, 08:02-08:11 UTC for newer data).",
+      "Filename date to upload date lag should consistently be 1 day (around 24 hours).",
+      "A significant increase in 'filtered' zero-row uploads beyond regular occurrence (~4 per month) would be anomalous.",
+      "Empty files are expected to be around 3.7% of total and associated with 'filtered' jobs."
     ],
     "source_id": "220505"
   },
@@ -1536,11 +1567,14 @@
       }
     ],
     "insights_for_incidences": [
-      "File count consistency: Exactly one file per day pattern.",
-      "Processing reliability: 100% success rate; no empty files, failures, or duplicates recorded.",
-      "Weekend behavior identical to weekdays; absence on any calendar day would be unusual.",
-      "Two distinct upload windows are now part of the baseline: 14:08-18:11 UTC and 08:03-08:19 UTC.",
-      "Clear step-wise reduction pattern in file size over time."
+      "Exactly one file per day is expected. Deviation from this is anomalous.",
+      "Any processing failure, empty files, or duplicates would be anomalous.",
+      "Absence of daily uploads (beyond three allowed gap-days) would be anomalous.",
+      "Absence of uploads on any calendar day (including weekends) would be unusual.",
+      "Upload times outside the 14:08-18:11 UTC (Feb-May) or 08:03-08:19 UTC (May-Sep) windows are anomalous.",
+      "File sizes outside the normal range (45,470-1,884,789 rows) would be anomalous.",
+      "Files without the '_BR_3DS' entity after 2025-03-02 are anomalous, as are files with other entities.",
+      "A lag pattern (filename date -> upload date) significantly deviating from median 2 days (mean 2.0 days, stdev ±0.2 days) is anomalous."
     ],
     "source_id": "220506"
   },
@@ -1664,12 +1698,19 @@
       }
     ],
     "insights_for_incidences": [
-      "Empty/small files are not part of the ongoing pattern; they were confined to an initial backfill.",
-      "Expect predominantly one file per day.",
-      "Absence of daily uploads would be anomalous, as uploads occur on ~97.5% of days.",
-      "Weekends consistently show higher volumes than weekdays.",
-      "The normal range for file rows is between 104,642 and 739,491.",
-      "Typical upload window is 14:30-16:30 UTC."
+      "Empty files are confined to initial backfill period (Feb 20-21); their occurrence afterwards would be anomalous.",
+      "More than one file processed per day (or zero files when expected) would be anomalous given the predominant single-file-per-day pattern.",
+      "Lag between filename-date and upload-date significantly deviating from 1.1 ± 0.3 days would be anomalous.",
+      "Uploads outside the typical window of 14:30-16:30 UTC (with minor daily variations) would be anomalous.",
+      "Absence of processing on any day, or lower than expected volumes on weekends (which typically show higher volumes), would be anomalous.",
+      "Deleted files not followed by re-upload within 1-3 days would be anomalous.",
+      "Frequent or prolonged upload gaps (exceeding approximately 2.5% of days without uploads) would be anomalous.",
+      "Deviation from daily upload cadence, especially on weekends, or significantly fewer than 97.5% of days with uploads, would be anomalous.",
+      "Weekend uploads outside the typical 14:30-16:30 UTC window would be anomalous.",
+      "Significant deviation from expected daily volume distribution, particularly lower volumes on Sunday (highest per-file median) or Monday (highest total), would be anomalous.",
+      "File sizes outside the normal range (104,642-739,491 rows) or significantly deviating from the median (473,194.5 rows) would be anomalous.",
+      "Weekend volumes lower than weekdays would be anomalous.",
+      "Median file size reverting to below 500k rows after March 2025, or a significant, sustained deviation from values >500k rows, would be anomalous."
     ],
     "source_id": "224602"
   },
@@ -1793,11 +1834,10 @@
       }
     ],
     "insights_for_incidences": [
-      "Recurrence of empty files would be atypical (<1% since Feb).",
-      "Predominantly one file per day.",
-      "All days (including weekends) show active processing with comparable volumes.",
-      "Row counts normally lie inside 10k - 30k regardless of weekday.",
-      "Clear shift in upload time from 15:xx UTC (Feb-Jun) to 12:xx UTC (Jul-Aug); both windows are now part of the baseline."
+      "Predominantly one file per day; more than one file could be anomalous.",
+      "Empty files are confined to early January 2025; recurrence would be atypical (<1% since Feb).",
+      "Upload timing shows two distinct regimes: Feb-Jun (15:10 UTC ± 20 min) and Jul-Aug (12:15 UTC ± 15 min); uploads outside these windows could be anomalous.",
+      "All days (including weekends) show active processing with comparable volumes (10k-30k rows); deviation from this range would be anomalous."
     ],
     "source_id": "224603"
   },
@@ -1921,14 +1961,15 @@
       }
     ],
     "insights_for_incidences": [
-      "Empty files are all associated with the 'anota-ai' merchant.",
-      "92% of files arrive between 20:10-20:25 UTC; extremely stable pattern.",
-      "Uploads occur primarily on business days.",
-      "No uploads are expected on Sunday.",
-      "Occasional Saturday activity is possible and should have high volume when present.",
-      "Large multi-day files (>900k rows) occur every 2-3 weeks and are considered normal.",
-      "Files from merchant 'anota-ai' are expected to be markedly smaller and can occasionally be empty.",
-      "Normal file row count is between 0 and 741,881 rows."
+      "Absence of business day uploads (Mon-Fri) would be anomalous.",
+      "Uploads outside the 20:10-20:25 UTC window are anomalous.",
+      "Significant deviation from the mean 9.21 files on Thursday could be anomalous.",
+      "Consistent high volume activity on Saturday is normal when present, but absence or very low volume should be monitored.",
+      "Upload timing outside of the 20:05-20:30 UTC window, or a significant deviation from 20:17 UTC with ±8 minutes standard deviation, would be anomalous.",
+      "Significantly lower volume on Thursday (expected 41.4M rows) or Monday (expected 13.5M rows) could indicate an issue.",
+      "Deviation from expected volume for '_' merchant (285k-300k rows) is anomalous.",
+      "Empty files not associated with 'anota-ai' merchant or a significantly higher percentage of empty files are anomalous.",
+      "A higher percentage than 7.5% of files with stopped/failure/deleted status combined is anomalous."
     ],
     "source_id": "228036"
   },
@@ -2052,11 +2093,12 @@
       }
     ],
     "insights_for_incidences": [
-      "Upload pattern: Primarily business days; occasional Saturday activity.",
-      "Timing precision: Consistent upload window (20:05-20:35 UTC); mean 20:17 UTC.",
-      "Thursday shows exceptional peak volume (35.3M rows); Monday second highest (9.6M rows).",
-      "Empty files (19.1%) and large files (>1M rows) are present in historical record and should not automatically trigger alerts.",
-      "Absence of uploads on Sunday is expected."
+      "Uploads are expected within a tight window (20:05-20:35 UTC). Any uploads outside this window would be anomalous.",
+      "File processing primarily occurs on business days; absence of business day uploads would be anomalous.",
+      "Any upload activity on Sunday would be anomalous, as no processing activity is expected.",
+      "Thursday typically shows the highest file count (mean 8.5 files); significant deviation could indicate an anomaly.",
+      "Thursday shows exceptional peak volume (35.3M rows) and Monday is second highest (9.6M rows); significant deviation from these expected volumes could be anomalous.",
+      "Empty files (around 19.1% of total) and large files (up to 1.4M rows) are present in the historical record and should not automatically trigger alerts."
     ],
     "source_id": "228038"
   },
@@ -2180,11 +2222,13 @@
       }
     ],
     "insights_for_incidences": [
-      "Empty files are concentrated in 'anota-ai' merchant files.",
-      "Uploads happen on business days, with only occasional Saturday uploads and no Sunday uploads.",
-      "Uploads are expected in a remarkably consistent window (20:12-20:23 UTC).",
-      "Files from merchant 'anota-ai' are consistently small (<50 rows) or empty.",
-      "Monday consolidated files (≥40k rows) are a normal weekly pattern, up to ~55k rows."
+      "Absence of weekday uploads would be anomalous.",
+      "Uploads outside 20:12-20:23 UTC window (excluding bulk backfills at 18:38 UTC) are anomalous.",
+      "Merchant '_' files typically have 11k-35k rows; deviations may be anomalous.",
+      "Merchant 'anota-ai' files are predominantly small (<50 rows) or empty; larger files may be anomalous.",
+      "Monday consolidated files are expected to be between 40k and 55k rows.",
+      "Absence of uploads on Wednesday and Thursday could indicate an anomaly, as these days show the highest total volumes.",
+      "Significant deviation from the normal file size range (0-36,874 rows) could be anomalous."
     ],
     "source_id": "239611"
   },
@@ -2308,12 +2352,15 @@
       }
     ],
     "insights_for_incidences": [
-      "Absence of weekday uploads would be anomalous; weekend uploads are rare.",
-      "Uploads should occur daily in a very tight window around 20:00 UTC.",
-      "Large files (>50k rows) are infrequent but expected 1-2 times per month, especially on Mondays.",
-      "Around 9.9% of files are empty, which is a significant characteristic of this datasource.",
-      "Data drift detected: row counts have declined by ~25% since June 2025.",
-      "The 'anota-ai' merchant has a higher failure rate and predominantly small files."
+      "High percentage of empty files (9.9%) are associated with stopped status files.",
+      "21.7% of files have stopped status, concentrated Tuesday-Thursday.",
+      "Merchant 'anota-ai' has a higher failure rate with predominantly small files (0-30 rows), unlike merchant '_' with consistent 11k-20k row files and high success.",
+      "Deviation from a median lag of 2.0 days (end-date in filename to upload date) could be anomalous.",
+      "Uploads should consistently occur within 20:05-20:23 UTC for most days; Wednesday may have an earlier start (18:41 UTC).",
+      "Absence of business day uploads or unexpected weekend activity (especially Sundays) would be anomalous.",
+      "Wednesday typically has the highest file count and total volume.",
+      "A significant deviation from the observed ~25% decline in typical row counts since June 2025.",
+      "Appearance of large files (>50k rows) outside of 1-2 times per month, or not on Mondays/month-opening dates, could be anomalous."
     ],
     "source_id": "239613"
   }

@@ -9,7 +9,7 @@ load_dotenv()
 # Este agente no necesita herramientas, solo su instrucción (prompt) para razonar.
 recommender_agent = Agent(
     name="recommender_agent",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     description="Analiza una incidencia y el contexto de su fuente para generar una recomendación accionable.",
     instruction=SYSTEM_PROMPT
 )

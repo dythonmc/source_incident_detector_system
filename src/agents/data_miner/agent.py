@@ -23,7 +23,7 @@ def read_file_content(file_path: str) -> dict:
 
 data_miner_agent = Agent(
     name="data_miner_agent",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     description="Un agente que extrae datos estructurados de archivos CV en formato Markdown.",
     instruction=SYSTEM_PROMPT,
     tools=[read_file_content]
